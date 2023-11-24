@@ -2,11 +2,8 @@
   <q-page>
     Mapa
 
-    <div>
-      <button>Capitulo 1</button>
-      <button>Capitulo 2</button>
-      <button>Capitulo 3</button>
-      <button>Capitulo 4</button>
+    <div v-for="(fase, key, index) in fases" :key="index">
+      <button @click="goToDiary(index)">{{ fase.title }}</button>
     </div>
   </q-page>
 </template>
@@ -16,6 +13,17 @@ export default {
     return {
       teste: "",
     };
+  },
+  props: {
+    fases: Object,
+  },
+  methods: {
+    goToDiary(faseIndex) {
+      //recebe o index do button clicado,, e passa para o componente pai, MapLevels, assim sabemos qual a fase escolhida
+      faseIndex += 1;
+      //faseIndex = "fase" + faseIndex;
+      this.$emit("goToDiary", faseIndex);
+    },
   },
 };
 </script>

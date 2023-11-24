@@ -4,17 +4,14 @@
       <!-- <div v-show="show"> -->
       <h1>Jogo Card</h1>
       <div v-for="gameQuestion in gameQuestions" :key="gameQuestion.id">
-        <div v-if="gameQuestion.id == index">
+        <div v-if="gameQuestion.id == this.index">
           {{ gameQuestion.pergunta }}
           <div
             v-for="(value, key, index) in gameQuestion.alternativas"
             :key="index"
           >
-            <input
-              type="button"
-              :value="value"
-              @click="checkIfIsCorrect(key), nextQuestion()"
-            />
+            <input type="button" :value="value" @click="nextQuestion()" />
+            <!-- checkIfIsCorrect(key), -->
             <!-- com : antes do value ele aceita variaveis dentro de " "-->
           </div>
         </div>
@@ -40,14 +37,16 @@ export default defineComponent({
       totalScore: 0,
     };
   },
+
   props: {
     gameQuestions: Object,
   },
+
   methods: {
     nextQuestion() {
       this.index += 1;
       if (this.index > 3) {
-        this.index = 3;
+        this.index = 1;
 
         this.$emit("goToResults", this.totalScore);
       }
@@ -61,9 +60,9 @@ export default defineComponent({
     checkIfIsCorrect(key) {
       this.chave = key;
       if (this.chave == "certa") {
-        console.log(this.chave);
+        //console.log(this.chave);
         this.totalScore += 1;
-        console.log(this.totalScore);
+        //console.log(this.totalScore);
       } /*else {
         this.totalScore -= 1;
         if (this.totalScore < 0) {

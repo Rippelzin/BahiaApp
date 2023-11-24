@@ -17,7 +17,6 @@ export default {
   methods: {
     goToMap() {
       this.$emit("goToMap");
-      console.log("clicou");
     },
   },
 };
