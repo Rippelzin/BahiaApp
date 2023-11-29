@@ -8,7 +8,13 @@
 
 <script>
 //import { ref } from "vue";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import { route } from "quasar/wrappers";
 import { useRouter } from "vue-router";
 
 export default {
@@ -32,7 +38,17 @@ export default {
           alert(error.message);
         });
     },
-    signInWithGoogle() {},
+    signInWithGoogle() {
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(getAuth(), provider)
+        .then((result) => {
+          console.log(result.user);
+          this.router.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 };
 </script>

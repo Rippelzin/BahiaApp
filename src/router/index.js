@@ -36,13 +36,22 @@ export default route(function (/* { store, ssrContext } */) {
     ),
   });
 
-  //const getCurrentUser(){
+  const getCurrentUser = () => {
+    return new Promise((resolve, reject) => {
+      const removeListener = onAuthStateChanged(
+        getAuth(),
+        (user) => {
+          removeListener();
+          resolve(user);
+        },
+        reject
+      );
+    });
+  };
 
-  //}
-
-  Router.beforeEach((to, from, next) => {
+  Router.beforeEach(async (to, from, next) => {
     if (to.matched.some((record) => record.meta.requiresAuth)) {
-      if (getAuth().currentUser) {
+      if (await getCurrentUser()) {
         next();
       } else {
         next("/login");
