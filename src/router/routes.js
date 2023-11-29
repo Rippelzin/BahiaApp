@@ -4,10 +4,16 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [
       { path: "", component: () => import("pages/IndexPage.vue") },
-      { path: "/jogo", component: () => import("pages/JogoPage.vue") },
+      {
+        path: "/jogo",
+        component: () => import("pages/JogoPage.vue"),
+        meta: { requiresAuth: true },
+      },
       { path: "/diario", component: () => import("pages/DiarioPage.vue") },
       { path: "/opcoes", component: () => import("pages/OpcoesPage.vue") },
       { path: "/creditos", component: () => import("pages/CreditosPage.vue") },
+      { path: "/registrar", component: () => import("pages/RegisterPage.vue") },
+      { path: "/login", component: () => import("pages/SignIn.vue") },
     ],
   },
 

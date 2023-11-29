@@ -19,13 +19,21 @@
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <q-item-label header> Navegador </q-item-label>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item clickable to="/">
+          <q-tem-section avatar>
+            <q-icon name="settings" />
+          </q-tem-section>
+          <q-item-label> Settings </q-item-label>
+        </q-item>
+
+        <q-item clickable @click="SignOut" v-if="this.isLoggedIn">
+          <q-tem-section avatar>
+            <q-icon name="logout" />
+          </q-tem-section>
+          <q-item-label> Sair </q-item-label>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -37,10 +45,18 @@
 
 <script>
 import { defineComponent, ref } from "vue";
-import EssentialLink from "components/EssentialLink.vue";
-
+//import EssentialLink from "components/EssentialLink.vue";
+import { getAuth, onAuthStateChanged, signOut } from "@firebase/auth";
+import { onMounted } from "vue";
+import router from "src/router";
 const linksList = [
   {
+    title: "Sair",
+    caption: "",
+    icon: "school",
+    link: "",
+  },
+  /* {
     title: "Docs",
     caption: "quasar.dev",
     icon: "school",
@@ -81,15 +97,15 @@ const linksList = [
     caption: "Community Quasar projects",
     icon: "favorite",
     link: "https://awesome.quasar.dev",
-  },
+  },*/
 ];
 
 export default defineComponent({
   name: "MainLayout",
 
-  components: {
+  /*components: {
     EssentialLink,
-  },
+  },*/
 
   setup() {
     const leftDrawerOpen = ref(false);
@@ -101,6 +117,32 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
     };
+  },
+
+  data() {
+    return {
+      auth: "",
+      isLoggedIn: false,
+    };
+  },
+
+  methods: {
+    SignOut() {
+      alert("adeus");
+      signOut(this.auth).then(() => {
+        router.push("/");
+      });
+    },
+  },
+  mounted() {
+    this.auth = getAuth();
+    onAuthStateChanged(this.auth, (user) => {
+      if (user) {
+        this.isLoggedIn = true;
+      } else {
+        this.isLoggedIn = false;
+      }
+    });
   },
 });
 </script>
