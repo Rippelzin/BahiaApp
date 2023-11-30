@@ -31,7 +31,7 @@ export default {
       createUserWithEmailAndPassword(getAuth(), this.email, this.password)
         .then((data) => {
           console.log("Sucessfuly Registered!");
-          this.router.push("/");
+          this.router.push("/jogo");
         })
         .catch((error) => {
           console.log(error.code);
@@ -43,7 +43,7 @@ export default {
       signInWithPopup(getAuth(), provider)
         .then((result) => {
           console.log(result.user);
-          this.router.push("/");
+          this.router.push("/jogo");
         })
         .catch((error) => {
           console.log(error);

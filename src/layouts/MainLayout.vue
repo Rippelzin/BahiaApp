@@ -23,6 +23,27 @@
 
         <q-item clickable to="/">
           <q-tem-section avatar>
+            <q-icon name="home" />
+          </q-tem-section>
+          <q-item-label> Home </q-item-label>
+        </q-item>
+
+        <q-item clickable to="/mapa" v-if="this.isLoggedIn">
+          <q-tem-section avatar>
+            <q-icon name="public" />
+          </q-tem-section>
+          <q-item-label> Mapa da sua Aventura </q-item-label>
+        </q-item>
+
+        <q-item clickable to="/diario" v-if="this.isLoggedIn">
+          <q-tem-section avatar>
+            <q-icon name="menu_book" />
+          </q-tem-section>
+          <q-item-label> Diario da Aventura </q-item-label>
+        </q-item>
+
+        <q-item clickable to="/">
+          <q-tem-section avatar>
             <q-icon name="settings" />
           </q-tem-section>
           <q-item-label> Settings </q-item-label>

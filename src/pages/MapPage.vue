@@ -1,46 +1,14 @@
 <template>
-  <q-page class="flex flex-center">
-    <h1>
-      <!-- -->
-      <MapLevels
-        v-show="this.showGame == 1"
-        :fases="fases"
-        :fase="this.actualFase"
-        @go-To-Diary="goToDiary"
-      />
-
-      <GameDiary
-        v-show="this.showGame == 2"
-        :diarySection="diario"
-        :fase="this.faseIndex"
-        @go-To-Game="goToGame"
-      />
-
-      <GameCard
-        @go-To-Results="goToResults"
-        :gameQuestions="this.faseSelected.perguntas"
-        v-show="this.showGame == 3"
-      />
-
-      <GameResults
-        :results="this.resultsOfFase"
-        v-show="this.showGame == 4"
-        @go-To-Map="goToMap"
-      />
-    </h1>
+  <q-page>
+    <MapLevels :fases="fases" />
   </q-page>
 </template>
-
 <script>
-import GameCard from "src/components/GameCard.vue";
-import GameDiary from "src/components/GameDiary.vue";
-import GameResults from "src/components/GameResults.vue";
 import MapLevels from "src/components/MapLevels.vue";
-import { defineComponent } from "vue";
 
-export default defineComponent({
-  name: "IndexPage",
-  components: { GameCard, GameResults, MapLevels, GameDiary },
+export default {
+  components: { MapLevels },
+
   data() {
     return {
       fases: {
@@ -212,68 +180,7 @@ export default defineComponent({
           ],
         },
       },
-
-      diario: {
-        capitulo1: {
-          titulo: "O COMECO",
-          text: "asdalorem ipsum llorem ipsum lorem ipsum",
-          imagem1:
-            "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
-        },
-        capitulo2: {
-          titulo: "Os primeiros Dias",
-          text: "asdalorem ipsum llorem ipsum lorem ipsum",
-          imagem1:
-            "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
-        },
-        capitulo3: {
-          titulo: "O desafio",
-          text: "asdalorem ipsum llorem ipsum lorem ipsum",
-          imagem1:
-            "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
-        },
-        capitulo4: {
-          titulo: "A RETA Final",
-          text: "asdalorem ipsum llorem ipsum lorem ipsum",
-          imagem1:
-            "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
-        },
-      },
-
-      showGame: 1,
-      resultsOfFase: "",
-      faseSelected: {},
-      faseIndex: 0,
-      actualFase: 1,
     };
   },
-  methods: {
-    goToResults(data) {
-      this.resultsOfFase = data;
-      this.showGame = 4;
-    },
-    goToMap() {
-      this.showGame = 1;
-    },
-    goToDiary(faseIndex) {
-      //recebe, vindo do componente filho o index da fase e atribui para uma variavel aqui
-      this.faseIndex = faseIndex;
-      //fase + faseIndex, para assim acessar a partir da key do dict fases: fase1, fase2 ... essas sao as keys
-      let key = "fase" + this.faseIndex;
-
-      this.faseSelected = this.fases[key];
-      //console.log(this.faseSelected);
-      this.showGame = 2;
-      //fazer uma variavel que tem o index da fase que e passado para os compoonentes se acharem dentrro da page Jogo
-    },
-    goToGame() {
-      this.showGame = 3;
-    },
-  },
-  mounted() {
-    localStorage.setItem("actualFase", this.actualFase);
-  },
-});
+};
 </script>
-
-<style></style>

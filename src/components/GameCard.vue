@@ -10,7 +10,11 @@
             v-for="(value, key, index) in gameQuestion.alternativas"
             :key="index"
           >
-            <input type="button" :value="value" @click="nextQuestion()" />
+            <input
+              type="button"
+              :value="value"
+              @click="nextQuestion(gameQuestions.length), checkIfIsCorrect(key)"
+            />
             <!-- checkIfIsCorrect(key), -->
             <!-- com : antes do value ele aceita variaveis dentro de " "-->
           </div>
@@ -18,8 +22,7 @@
       </div>
       <br />
       <div>
-        <button @click="previousQuestion">Pergunta Anterior</button>
-        <button @click="nextQuestion">Proxima Pergunta</button>
+        <!--<button @click="previousQuestion">Pergunta Anterior</button>  <button @click="nextQuestion">Proxima Pergunta</button>-->
       </div>
     </div>
   </q-page>
@@ -43,12 +46,20 @@ export default defineComponent({
   },
 
   methods: {
-    nextQuestion() {
+    nextQuestion(numberOfQuestions) {
       this.index += 1;
-      if (this.index > 3) {
-        this.index = 1;
 
-        this.$emit("goToResults", this.totalScore);
+      if (this.index > numberOfQuestions) {
+        this.index = 1;
+        let aprovado = false;
+        let media = numberOfQuestions / 2;
+
+        if (this.totalScore > media) {
+          aprovado = true;
+        }
+        console.log(aprovado);
+        this.$emit("goToResults", aprovado);
+        this.totalScore = 0; //reseta o score para a proxima fase
       }
     },
     previousQuestion() {
@@ -61,9 +72,14 @@ export default defineComponent({
       this.chave = key;
       if (this.chave == "certa") {
         //console.log(this.chave);
+        alert("correta");
         this.totalScore += 1;
-        //console.log(this.totalScore);
-      } /*else {
+        console.log(this.totalScore);
+      } else {
+        alert("errou!");
+        console.log(this.totalScore);
+      }
+      /*else {
         this.totalScore -= 1;
         if (this.totalScore < 0) {
           this.totalScore = 0;
