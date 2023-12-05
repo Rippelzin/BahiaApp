@@ -49,7 +49,7 @@ export default defineComponent({
           perguntas: [
             {
               id: 1,
-              pergunta: "pergunta 1 fase 1",
+              pergunta: "E verdade que os tomates sao frutas?",
               alternativas: {
                 certa: "alternativa 1",
                 errada_um: "alternativa errada um",
@@ -57,7 +57,7 @@ export default defineComponent({
                 errada_tres: "alternativa errada tres",
               },
               imagemBg:
-                "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
+                "https://img.freepik.com/vetores-gratis/plano-de-fundo-de-aventura-de-design_23-2149059266.jpg",
             },
             {
               id: 2,
@@ -244,12 +244,18 @@ export default defineComponent({
       resultsOfFase: "",
       faseSelected: {},
       faseIndex: 0,
-      actualFase: 1,
+      actualFase: localStorage.getItem("actualFase"),
     };
   },
   methods: {
     goToResults(data) {
       this.resultsOfFase = data;
+      if (this.resultsOfFase == true) {
+        let faseatual = localStorage.getItem("actualFase");
+        faseatual = Number(faseatual);
+        faseatual = faseatual + 1;
+        localStorage.setItem("actualFase", faseatual);
+      }
       this.showGame = 4;
     },
     goToMap() {

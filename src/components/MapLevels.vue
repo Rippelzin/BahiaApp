@@ -3,7 +3,9 @@
     Mapa da sua aventura
     <div class="mapBg">
       <div v-for="(fase, key, index) in fases" :key="index">
-        <button @click="goToDiary(index)">{{ fase.title }}</button>
+        <button @click="goToDiary(index)" class="levelButton">
+          {{ fase.title }}
+        </button>
       </div>
     </div>
   </q-page>
@@ -41,5 +43,8 @@ body {
 }
 .mapBg {
   background-color: rgb(255, 166, 0);
+}
+.levelButton {
+  margin: 20px;
 }
 </style>

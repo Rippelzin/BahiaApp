@@ -1,22 +1,30 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="all">
     <div>
       <!-- <div v-show="show"> -->
-      <h1>Jogo Card</h1>
+
       <div v-for="gameQuestion in gameQuestions" :key="gameQuestion.id">
         <div v-if="gameQuestion.id == this.index">
-          {{ gameQuestion.pergunta }}
-          <div
-            v-for="(value, key, index) in gameQuestion.alternativas"
-            :key="index"
-          >
-            <input
-              type="button"
-              :value="value"
-              @click="nextQuestion(gameQuestions.length), checkIfIsCorrect(key)"
-            />
-            <!-- checkIfIsCorrect(key), -->
-            <!-- com : antes do value ele aceita variaveis dentro de " "-->
+          <div class="questionBg">
+            <!-- style="--img: var(gameQuestion.imagemBg)"-->
+            <div class="pergunta">{{ gameQuestion.pergunta }}</div>
+
+            <div
+              v-for="(value, key, index) in gameQuestion.alternativas"
+              :key="index"
+              class="alternativas"
+            >
+              <input
+                type="button"
+                :value="value"
+                @click="
+                  nextQuestion(gameQuestions.length), checkIfIsCorrect(key)
+                "
+                class="botaoResposta"
+              />
+              <!-- checkIfIsCorrect(key), -->
+              <!-- com : antes do value ele aceita variaveis dentro de " "-->
+            </div>
           </div>
         </div>
       </div>
@@ -92,7 +100,37 @@ export default defineComponent({
 </script>
 
 <style>
-.estilo {
-  background-color: red;
+.all {
+  background-image: url("https://img.freepik.com/vetores-gratis/plano-de-fundo-de-aventura-de-design_23-2149059266.jpg");
+  background-size: cover;
+
+  display: flex;
+  padding: 50px;
+  margin: 40px;
+}
+.botaoResposta {
+  color: rgb(10, 10, 10);
+  background-color: rgb(193, 127, 6);
+
+  border-radius: 10px;
+  font-size: 30px;
+  transition: 1s;
+}
+.botaoResposta:hover {
+  background-color: blue;
+  border-radius: 50px;
+}
+.pergunta {
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 10px;
+}
+
+.alternativas {
+  display: flex;
+}
+
+.questionBg {
+  display: grid;
 }
 </style>
