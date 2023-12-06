@@ -216,25 +216,32 @@ export default defineComponent({
       diario: {
         capitulo1: {
           titulo: "O COMECO",
-          text: "asdalorem ipsum llorem ipsum lorem ipsum",
+          text1:
+            "asdalorem ipsum llorem ipsum lorem ipsum asdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsum",
+          text2:
+            "asdalorem ipsum llorem ipsum lorem ipsum asdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsum",
           imagem1:
+            "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
+          imagem2:
+            "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
+          imagem3:
             "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
         },
         capitulo2: {
           titulo: "Os primeiros Dias",
-          text: "asdalorem ipsum llorem ipsum lorem ipsum",
+          text1: "asdalorem ipsum llorem ipsum lorem ipsum",
           imagem1:
             "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
         },
         capitulo3: {
           titulo: "O desafio",
-          text: "asdalorem ipsum llorem ipsum lorem ipsum",
+          text1: "asdalorem ipsum llorem ipsum lorem ipsum",
           imagem1:
             "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
         },
         capitulo4: {
           titulo: "A RETA Final",
-          text: "asdalorem ipsum llorem ipsum lorem ipsum",
+          text1: "asdalorem ipsum llorem ipsum lorem ipsum",
           imagem1:
             "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
         },

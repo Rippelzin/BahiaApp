@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="masterDiv">
     <div class="titulo">Mapa da sua aventura</div>
     <div class="mapBg">
       <div class="fases">
@@ -44,6 +44,9 @@ export default {
 body {
   background-color: rgb(127, 127, 192);
 }
+.masterDiv {
+  margin-top: 0%;
+}
 .titulo {
   font-size: 50px;
   text-align: center;
@@ -55,8 +58,9 @@ body {
 .mapBg {
   background-image: url("https://static.mundoeducacao.uol.com.br/mundoeducacao/2023/02/mapa-mundi-em-fundo-azul.jpg");
   background-size: cover;
+
   width: 1000px;
-  height: 600px;
+  height: 450px;
 }
 .fases {
   display: flex;
@@ -66,6 +70,15 @@ body {
 .levelButton {
   margin: 20px;
   font-size: 20px;
-  height: 50%;
+
+  font-family: "Comic Sans MS", cursive; /* Fonte infantil (substitua por sua preferida) */
+  border-radius: 30px;
+  width: 100px;
+  transition: 1s;
+}
+.levelButton:hover {
+  background-color: orange;
+  border: 5px solid white;
+  width: 150px;
 }
 </style>
