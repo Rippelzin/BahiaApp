@@ -1,6 +1,6 @@
 <template>
-  <q-page class="all">
-    <div>
+  <q-page class="flex flex-center">
+    <div class="all">
       <!-- <div v-show="show"> -->
 
       <div v-for="gameQuestion in gameQuestions" :key="gameQuestion.id">
@@ -9,21 +9,23 @@
             <!-- style="--img: var(gameQuestion.imagemBg)"-->
             <div class="pergunta">{{ gameQuestion.pergunta }}</div>
 
-            <div
-              v-for="(value, key, index) in gameQuestion.alternativas"
-              :key="index"
-              class="alternativas"
-            >
-              <input
-                type="button"
-                :value="value"
-                @click="
-                  nextQuestion(gameQuestions.length), checkIfIsCorrect(key)
-                "
-                class="botaoResposta"
-              />
-              <!-- checkIfIsCorrect(key), -->
-              <!-- com : antes do value ele aceita variaveis dentro de " "-->
+            <div class="alternativas">
+              <div
+                v-for="(value, key, index) in gameQuestion.alternativas"
+                :key="index"
+                class="alternativa"
+              >
+                <input
+                  type="button"
+                  :value="value"
+                  @click="
+                    nextQuestion(gameQuestions.length), checkIfIsCorrect(key)
+                  "
+                  class="botaoAlternativa"
+                />
+                <!-- checkIfIsCorrect(key), -->
+                <!-- com : antes do value ele aceita variaveis dentro de " "-->
+              </div>
             </div>
           </div>
         </div>
@@ -107,30 +109,35 @@ export default defineComponent({
   display: flex;
   padding: 50px;
   margin: 40px;
+  width: 100%;
+  height: 550px;
 }
-.botaoResposta {
-  color: rgb(10, 10, 10);
-  background-color: rgb(193, 127, 6);
 
-  border-radius: 10px;
-  font-size: 30px;
-  transition: 1s;
-}
-.botaoResposta:hover {
-  background-color: blue;
-  border-radius: 50px;
-}
 .pergunta {
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 10px;
+  font-size: 70px;
 }
-
+/* https://stackoverflow.com/questions/58478216/css-grid-2x2-grid-always-taking-up-the-full-width-when-possible */
 .alternativas {
-  display: flex;
+  display: grid;
 }
 
-.questionBg {
-  display: grid;
+.alternativa:nth-child(4) {
+  grid-column: 2;
+}
+
+.botaoAlternativa {
+  font-size: 30px;
+  border-radius: 20px;
+  width: 90%;
+  border: transparent;
+  transition: 1s;
+}
+.botaoAlternativa:hover {
+  background-color: rgb(40, 220, 40);
+  border-radius: 50px;
+  border: 2px solid white;
 }
 </style>

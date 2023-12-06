@@ -1,6 +1,6 @@
 <template>
-  <q-page>
-    <MapLevels :fases="fases" />
+  <q-page class="mapaPage">
+    <MapLevels :fases="fases" :fase="this.actualFase" />
   </q-page>
 </template>
 <script>
@@ -184,3 +184,10 @@ export default {
   },
 };
 </script>
+<style>
+.mapaPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
