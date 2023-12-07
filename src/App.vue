@@ -29,7 +29,7 @@ export default defineComponent({
 </script>
 <style>
 body {
-  background-image: url("https://i.ibb.co/GnRbNz3/3007891.jpg");
+  background-image: url("https://i.postimg.cc/gcB8qdV6/19201080.jpg");
   background-size: cover;
   min-height: 500px;
 
