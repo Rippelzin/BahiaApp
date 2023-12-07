@@ -107,17 +107,19 @@ export default defineComponent({
   background-size: cover;
 
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 50px;
   margin: 40px;
-  width: 100%;
-  height: 550px;
+  width: 150vh;
+  height: 100vh;
 }
 
 .pergunta {
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 10px;
-  font-size: 70px;
+  font-size: 50px;
 }
 /* https://stackoverflow.com/questions/58478216/css-grid-2x2-grid-always-taking-up-the-full-width-when-possible */
 .alternativas {
@@ -129,9 +131,11 @@ export default defineComponent({
 }
 
 .botaoAlternativa {
-  font-size: 30px;
+  font-size: 5vh;
   border-radius: 20px;
-  width: 90%;
+  margin: 10px;
+  width: 60vh;
+  height: 10vh;
   border: transparent;
   transition: 1s;
 }

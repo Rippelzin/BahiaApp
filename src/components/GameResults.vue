@@ -76,9 +76,11 @@ export default {
   color: #fff;
   background-color: #4caf50; /* Cor de fundo do botão (verde) */
   border-radius: 5px;
-  transition: background-color 1s ease; /* Adicionando transição para suavizar a mudança de cor */
+  transition: 1s ease; /* Adicionando transição para suavizar a mudança de cor */
+  border: transparent;
 }
 .botaoMapa:hover {
   background-color: rgb(164, 164, 4); /* Mudança de cor ao passar o mouse */
+  border: 5px solid white;
 }
 </style>

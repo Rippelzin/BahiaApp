@@ -1,9 +1,8 @@
 <template>
   <q-page>
-    <h1>Diario da sua aventura</h1>
     <div v-for="(section, key, index) in diarySection" :key="index">
       <div v-if="index + 1 == fase" class="page">
-        <div class="titulo">{{ section.titulo }}</div>
+        <div class="tituloDiario">{{ section.titulo }}</div>
 
         <div class="section1">
           <p class="paragrafo">{{ section.text1 }}</p>
@@ -16,7 +15,9 @@
         </div>
       </div>
     </div>
-    <button @click="goToGame">ir para o QUIZ</button>
+    <div class="centerBotao">
+      <button @click="goToGame" class="botaoQuiz">ir para o QUIZ</button>
+    </div>
   </q-page>
 </template>
 
@@ -34,9 +35,16 @@ export default {
 };
 </script>
 <style>
-.titulo {
-  margin-left: 10vh;
-  margin-right: 10vh;
+.tituloDiario {
+  margin-left: 20vh;
+
+  margin-right: 20vh;
+  background-color: white;
+  font-family: "Comic Sans MS", cursive; /* Fonte infantil (substitua por sua preferida) */
+  font-size: 70px;
+  text-align: center;
+  margin-bottom: 10vh;
+  color: #0077cc; /* Azul principal */
 }
 .page {
   display: grid;
@@ -62,5 +70,28 @@ export default {
 }
 .imagem1 {
   height: 50vh;
+}
+.botaoQuiz {
+  margin-top: 10vh;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 50px;
+  height: 100px;
+  font-family: "Comic Sans MS", cursive; /* Fonte infantil (substitua por sua preferida) */
+  text-decoration: none;
+  color: #fff;
+  background-color: #4caf50; /* Cor de fundo do botão (verde) */
+  border-radius: 5px;
+  transition: 1s ease; /* Adicionando transição para suavizar a mudança de cor */
+  border: transparent;
+}
+.botaoQuiz:hover {
+  background-color: rgb(164, 164, 4); /* Mudança de cor ao passar o mouse */
+  border: 5px solid white;
+}
+.centerBotao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
