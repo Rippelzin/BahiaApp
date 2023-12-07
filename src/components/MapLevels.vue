@@ -1,6 +1,9 @@
 <template>
   <q-page class="masterDiv">
-    <div class="titulo">Mapa da sua aventura</div>
+    <div class="divTitulo">
+      <div class="tituloMapa">Mapa da sua aventura</div>
+    </div>
+
     <div class="mapBg">
       <div class="fases">
         <div v-for="(fase, key, index) in fases" :key="index">
@@ -41,25 +44,28 @@ export default {
 </script>
 
 <style>
-body {
-  background-color: rgb(127, 127, 192);
-}
 .masterDiv {
-  margin-top: 0%;
+  margin-top: -vh;
 }
-.titulo {
-  font-size: 50px;
+.divTitulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tituloMapa {
+  font-size: 10vh;
   text-align: center;
   font-family: "Comic Sans MS", cursive; /* Fonte infantil (substitua por sua preferida) */
-  color: #0077cc; /* Azul principal */
-  background-color: white;
+  color: #000000; /* Azul principal */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5vh;
+  border-radius: 30px;
+  border: 3px solid black;
+
   margin: 10px;
 }
 .mapBg {
-  background-image: url("https://static.mundoeducacao.uol.com.br/mundoeducacao/2023/02/mapa-mundi-em-fundo-azul.jpg");
-  background-size: cover;
-
-  width: 1000px;
+  width: 200vh;
   height: 450px;
 }
 .fases {
@@ -69,11 +75,11 @@ body {
 }
 .levelButton {
   margin: 20px;
-  font-size: 20px;
-
+  font-size: 5vh;
+  color: #0077cc; /* Azul principal */
   font-family: "Comic Sans MS", cursive; /* Fonte infantil (substitua por sua preferida) */
   border-radius: 30px;
-  width: 100px;
+  width: 25vh;
   transition: 1s;
 }
 .levelButton:hover {

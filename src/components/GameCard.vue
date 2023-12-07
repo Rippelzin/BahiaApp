@@ -40,6 +40,7 @@
 
 <script>
 import { defineComponent } from "vue";
+import mapa from "assets/mapaBonitao.jpg";
 
 export default defineComponent({
   name: "GameCard",
@@ -109,8 +110,8 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  margin: 40px;
+  padding: 10vh;
+  margin: 10vh;
   width: 150vh;
   height: 100vh;
 }
@@ -119,7 +120,7 @@ export default defineComponent({
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 10px;
-  font-size: 50px;
+  font-size: 10vh;
 }
 /* https://stackoverflow.com/questions/58478216/css-grid-2x2-grid-always-taking-up-the-full-width-when-possible */
 .alternativas {

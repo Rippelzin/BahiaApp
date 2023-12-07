@@ -27,3 +27,9 @@ export default defineComponent({
   name: "App",
 });
 </script>
+<style>
+body {
+  background-image: url("https://i.ibb.co/GnRbNz3/3007891.jpg");
+  background-size: cover;
+}
+</style>
