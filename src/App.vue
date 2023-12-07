@@ -31,5 +31,13 @@ export default defineComponent({
 body {
   background-image: url("https://i.ibb.co/GnRbNz3/3007891.jpg");
   background-size: cover;
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
 }
 </style>

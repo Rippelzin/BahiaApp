@@ -104,9 +104,9 @@ export default defineComponent({
 
 <style>
 .all {
-  background-image: url("https://img.freepik.com/vetores-gratis/plano-de-fundo-de-aventura-de-design_23-2149059266.jpg");
+  /* background-image: url("https://img.freepik.com/vetores-gratis/plano-de-fundo-de-aventura-de-design_23-2149059266.jpg");
   background-size: cover;
-
+*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,7 +117,8 @@ export default defineComponent({
 }
 
 .pergunta {
-  color: white;
+  color: rgb(0, 0, 0);
+  background-color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 10px;
   font-size: 10vh;

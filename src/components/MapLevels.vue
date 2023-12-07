@@ -78,13 +78,14 @@ export default {
   font-size: 5vh;
   color: #0077cc; /* Azul principal */
   font-family: "Comic Sans MS", cursive; /* Fonte infantil (substitua por sua preferida) */
-  border-radius: 30px;
+  border-radius: 5vh;
   width: 25vh;
+
   transition: 1s;
 }
 .levelButton:hover {
   background-color: orange;
   border: 5px solid white;
-  width: 150px;
+  width: 35vh;
 }
 </style>

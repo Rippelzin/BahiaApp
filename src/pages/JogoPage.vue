@@ -6,14 +6,14 @@
         v-show="this.showGame == 1"
         :fases="fases"
         :fase="this.actualFase"
-        @go-To-Diary="goToDiary"
+        @go-To-Diary="goToDiaryBase"
       />
 
       <GameDiary
         v-show="this.showGame == 2"
         :diarySection="diario"
         :fase="this.faseIndex"
-        @go-To-Game="goToGame"
+        @go-To-Game="goToGameBase"
       />
 
       <GameCard
@@ -273,7 +273,7 @@ export default defineComponent({
     goToMap() {
       this.showGame = 1;
     },
-    goToDiary(faseIndex) {
+    goToDiaryBase(faseIndex) {
       //recebe, vindo do componente filho o index da fase e atribui para uma variavel aqui
       this.faseIndex = faseIndex;
       //fase + faseIndex, para assim acessar a partir da key do dict fases: fase1, fase2 ... essas sao as keys
@@ -284,7 +284,7 @@ export default defineComponent({
       this.showGame = 2;
       //fazer uma variavel que tem o index da fase que e passado para os compoonentes se acharem dentrro da page Jogo
     },
-    goToGame() {
+    goToGameBase() {
       this.showGame = 3;
     },
   },
