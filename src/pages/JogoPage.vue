@@ -229,8 +229,13 @@ export default defineComponent({
         },
         capitulo2: {
           titulo: "Os primeiros Dias",
-          text1: "asdalorem ipsum llorem ipsum lorem ipsum",
+          text1:
+            "asdalorem ipsum llorem ipsum lorem ipsum asdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsum",
+          text2:
+            "asdalorem ipsum llorem ipsum lorem ipsum asdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsumasdalorem ipsum llorem ipsum lorem ipsum",
           imagem1:
+            "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
+          imagem2:
             "https://img.freepik.com/fotos-premium/batalha-de-fundos-de-ilustracao-3d-rpg_670008-2.jpg",
         },
         capitulo3: {
