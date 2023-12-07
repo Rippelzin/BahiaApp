@@ -135,7 +135,7 @@ export default defineComponent({
   border-radius: 20px;
   margin: 10px;
   width: 60vh;
-  height: 10vh;
+
   border: transparent;
   transition: 1s;
 }
