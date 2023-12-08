@@ -261,7 +261,7 @@ export default defineComponent({
 
       obj: {
         title: "teste3",
-        description: "teste3",
+        description: "teste",
       },
     };
   },
@@ -294,17 +294,17 @@ export default defineComponent({
       this.showGame = 3;
     },
   },
-  mounted() {
+  /* mounted() {
     localStorage.setItem("actualFase", this.actualFase);
     axios
       .post(
-        "https://bahia-app-cd82d-default-rtdb.firebaseio.com/obj.json",
-        this.obj
+        "https://bahia-app-cd82d-default-rtdb.firebaseio.com/fases.json",
+        this.fases
       )
       .then((response) => {
         console.log("a");
       });
-  },
+  },*/
 });
 </script>
 
