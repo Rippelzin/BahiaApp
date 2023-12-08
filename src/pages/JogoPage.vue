@@ -37,6 +37,7 @@ import GameDiary from "src/components/GameDiary.vue";
 import GameResults from "src/components/GameResults.vue";
 import MapLevels from "src/components/MapLevels.vue";
 import { defineComponent } from "vue";
+import axios from "axios";
 
 export default defineComponent({
   name: "IndexPage",
@@ -257,6 +258,11 @@ export default defineComponent({
       faseSelected: {},
       faseIndex: 0,
       actualFase: localStorage.getItem("actualFase"),
+
+      obj: {
+        title: "teste3",
+        description: "teste3",
+      },
     };
   },
   methods: {
@@ -290,6 +296,14 @@ export default defineComponent({
   },
   mounted() {
     localStorage.setItem("actualFase", this.actualFase);
+    axios
+      .post(
+        "https://bahia-app-cd82d-default-rtdb.firebaseio.com/obj.json",
+        this.obj
+      )
+      .then((response) => {
+        console.log("a");
+      });
   },
 });
 </script>

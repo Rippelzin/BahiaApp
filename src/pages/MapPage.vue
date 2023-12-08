@@ -4,6 +4,7 @@
   </q-page>
 </template>
 <script>
+import axios from "axios";
 import MapLevels from "src/components/MapLevels.vue";
 
 export default {
@@ -180,7 +181,17 @@ export default {
           ],
         },
       },
+      teste: {},
     };
+  },
+  mounted() {
+    axios
+      .get("https://bahia-app-cd82d-default-rtdb.firebaseio.com/obj.json/")
+      .then((response) => {
+        this.teste = response;
+        console.log(this.teste);
+        console.log(Object.values(this.teste)[0]);
+      });
   },
 };
 </script>
