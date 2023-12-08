@@ -118,10 +118,13 @@ export default defineComponent({
 
 .pergunta {
   color: rgb(0, 0, 0);
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 10px;
   font-size: 10vh;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 /* https://stackoverflow.com/questions/58478216/css-grid-2x2-grid-always-taking-up-the-full-width-when-possible */
 .alternativas {
@@ -140,10 +143,12 @@ export default defineComponent({
 
   border: transparent;
   transition: 1s;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 .botaoAlternativa:hover {
-  background-color: rgb(40, 220, 40);
+  background-color: rgb(40, 139, 220);
   border-radius: 50px;
-  border: 2px solid white;
+  border: 3px solid black;
 }
 </style>

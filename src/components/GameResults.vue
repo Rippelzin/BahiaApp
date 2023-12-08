@@ -1,7 +1,10 @@
 <template>
   <q-page class="flex flex-center">
     <div class="resultsAll">
-      <h1 class="titulo">Seu Resultado:</h1>
+      <div class="divTitulo">
+        <h1 class="titulo">Seu Resultado:</h1>
+      </div>
+
       <div v-if="results" class="aprovado">
         <div>Parabens voce passou de fase!</div>
       </div>
@@ -32,6 +35,7 @@ export default {
 .resultsAll {
   display: grid;
 }
+
 .titulo {
   color: #0077cc; /* Azul principal */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
@@ -39,14 +43,20 @@ export default {
   text-align: center; /* Centralizar o texto */
   padding: 0px; /* Espaçamento interno */
 
-  background-color: #f2f2f2; /* Cor de fundo para destacar o texto */
-  font-size: 60px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Cor de fundo para destacar o texto */
+  font-size: 10vh;
+  border-radius: 20px;
 }
 .reprovado {
   text-align: center; /* Centralizar o texto */
   font-family: "Comic Sans MS", cursive; /* Fonte infantil (substitua por sua preferida) */
   background-color: rgb(220, 151, 151);
-  font-size: 25px;
+  font-size: 5vh;
   color: #cc0033; /* Cor do texto (um tom de vermelho) */
   border-radius: 50px;
   margin: 30px; /* Remover margens padrão */
@@ -58,7 +68,7 @@ export default {
   font-family: "Comic Sans MS", cursive; /* Fonte infantil (substitua por sua preferida) */
   background-color: rgb(162, 210, 162);
   border-radius: 50px;
-  font-size: 30px;
+  font-size: 5vh;
   color: #0f8e04; /* Cor do texto (um tom de vermelho) */
   margin: 30px; /* Remover margens padrão */
   padding: 5px; /* Espaçamento interno */
@@ -69,8 +79,8 @@ export default {
   margin-top: -2%;
   display: inline-block;
   padding: 10px 20px;
-  font-size: 50px;
-  height: 100px;
+  font-size: 15vh;
+  height: 20vh;
   font-family: "Comic Sans MS", cursive; /* Fonte infantil (substitua por sua preferida) */
   text-decoration: none;
   color: #fff;
@@ -80,7 +90,7 @@ export default {
   border: transparent;
 }
 .botaoMapa:hover {
-  background-color: rgb(164, 164, 4); /* Mudança de cor ao passar o mouse */
+  background-color: rgb(213, 196, 6); /* Mudança de cor ao passar o mouse */
   border: 5px solid white;
 }
 </style>
