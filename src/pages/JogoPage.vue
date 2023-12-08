@@ -4,7 +4,7 @@
       <!-- -->
       <MapLevels
         v-show="this.showGame == 1"
-        :fases="fases"
+        :fases="this.fases"
         :fase="this.actualFase"
         @go-To-Diary="goToDiaryBase"
       />
@@ -258,11 +258,7 @@ export default defineComponent({
       faseSelected: {},
       faseIndex: 0,
       actualFase: localStorage.getItem("actualFase"),
-
-      obj: {
-        title: "teste3",
-        description: "teste",
-      },
+      fasesFromFireBase: {},
     };
   },
   methods: {
@@ -294,13 +290,25 @@ export default defineComponent({
       this.showGame = 3;
     },
   },
-  /* mounted() {
+  mounted() {
     localStorage.setItem("actualFase", this.actualFase);
+
     axios
-      .post(
-        "https://bahia-app-cd82d-default-rtdb.firebaseio.com/fases.json",
-        this.fases
-      )
+      .get("https://bahia-app-cd82d-default-rtdb.firebaseio.com/fases.json")
+      .then((response) => {
+        this.fasesFromFireBase = response.data;
+        console.log(this.fasesFromFireBase);
+        for (let i in this.fasesFromFireBase) {
+          console.log(i);
+        }
+      });
+  },
+  /* mounted() {
+axios.post(
+      "https://bahia-app-cd82d-default-rtdb.firebaseio.com/fases.json",
+      this.fases
+    ),
+
       .then((response) => {
         console.log("a");
       });

@@ -185,13 +185,13 @@ export default {
     };
   },
   mounted() {
-    axios
+    /* axios
       .get("https://bahia-app-cd82d-default-rtdb.firebaseio.com/obj.json/")
       .then((response) => {
         this.teste = response;
         console.log(this.teste);
         console.log(Object.values(this.teste)[0]);
-      });
+      });*/
   },
 };
 </script>

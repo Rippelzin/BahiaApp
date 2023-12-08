@@ -1,6 +1,9 @@
 <template>
   <q-page class="divCentral">
-    <h1 class="titulo">Faca seu login</h1>
+    <div class="divTitulo">
+      <h1 class="titulo">Faca seu login</h1>
+    </div>
+
     <div class="form">
       <div class="fieldOut">
         <input type="text" placeholder="email" v-model="email" class="field" />
@@ -19,10 +22,17 @@
     <div class="buttons">
       <p><button @click="login" class="submit">Login</button></p>
     </div>
-    <div class="section">
-      <h1 class="ouGoogle"></h1>
+
+    <div class="buttons">
+      <p>
+        <q-item to="/registrar" class="submit">Cadastre-se </q-item>
+      </p>
     </div>
 
+    <!--<div class="section">
+      <h1 class="ouGoogle"></h1>
+    </div>
+ -->
     <div class="buttons">
       <p>
         <button @click="signInWithGoogle" class="submit">
@@ -94,18 +104,26 @@ export default {
 </script>
 <style>
 .divCentral {
-  margin-top: -5vh;
+  margin-top: 0vh;
   display: grid;
   align-items: center;
   justify-content: center;
 }
+
 .titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(255, 255, 255, 0.75);
   border: 1px solid black;
   border-radius: 20px;
+  height: 20vh;
   font-family: "Comic Sans MS", cursive;
   padding: 2vh;
   color: rgb(0, 119, 255);
+  height: 20vh;
+  font-size: 10vh;
+  padding: 5px;
 }
 .form {
   margin-top: -5vh;
@@ -116,7 +134,7 @@ export default {
 
 .field {
   height: 10vh;
-  margin: 20px;
+  margin: 10px;
   width: 60vh;
   border-radius: 20px;
   border: 1px solid black;
@@ -137,17 +155,23 @@ export default {
 
 .submit {
   width: 40vh;
-  height: 15vh;
+  height: 7vh;
+
   border: 2px black solid;
+  background-color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   border-radius: 20px;
-  font-size: 5vh;
+  font-size: 3vh;
   font-family: "Comic Sans MS", cursive;
   transition: 1s;
-  margin: 10px;
+  margin: 5px;
 }
 .submit:hover {
   width: 45vh;
-  height: 18vh;
+  height: 13vh;
   border: 5px rgb(233, 233, 233) solid;
 
   font-family: "Comic Sans MS", cursive;

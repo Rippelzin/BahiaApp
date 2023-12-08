@@ -18,10 +18,6 @@
         <p><button @click="register" class="submit">Cadastrar</button></p>
       </div>
 
-      <div class="section">
-        <h1 class="ouGoogle"></h1>
-      </div>
-
       <div class="buttons">
         <p>
           <button @click="signInWithGoogle" class="submit">
@@ -126,17 +122,17 @@ export default {
 
 .submit {
   width: 40vh;
-  height: 15vh;
+  height: 7vh;
   border: 2px black solid;
   border-radius: 20px;
-  font-size: 5vh;
+  font-size: 3vh;
   font-family: "Comic Sans MS", cursive;
   transition: 1s;
   margin: 0px;
 }
 .submit:hover {
   width: 45vh;
-  height: 18vh;
+  height: 13vh;
   border: 5px rgb(233, 233, 233) solid;
 
   font-family: "Comic Sans MS", cursive;
